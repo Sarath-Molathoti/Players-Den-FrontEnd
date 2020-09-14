@@ -1,0 +1,9 @@
+<h1>Player Registration</h1>
+<div class="container">
+    Player Team Name : <input type="text" name="player.player_team_name" [(ngModel)]="player.player_team_name" >
+    Player Name : <input type="text" name="player.player_name" [(ngModel)]="player.player_name" >
+    Player Age : <input type="text" name="player.player_age" [(ngModel)]="player.player_age" >
+    Player Caption : <input type="text" name="player.player_caption" [(ngModel)]="player.player_caption" >
+    <button (click)=savePlayer() class="btn btn-success">Save</button>
+
+</div>

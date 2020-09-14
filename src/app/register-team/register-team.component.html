@@ -1,0 +1,11 @@
+<h1>Team Registration</h1>
+<!-- <div class="container">
+<div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+<div> -->
+
+  <div class="container">
+Team Name : <input type="text" name="team.team_name" [(ngModel)]="team.team_name">
+Team Caption : <input type="text" name="team.team_caption" [(ngModel)]="team.team_caption" >
+<button (click)=saveTeam() class="btn btn-success">Save</button>
+
+</div>
