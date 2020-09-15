@@ -19,4 +19,7 @@ export class TeamRegisterService {
     return this.http.post<Player>(`http://localhost:8080/player/`,player);
 
   }
+  retrieveAllTeamScores(){
+    return this.http.get<Team[]>(`http://localhost:8080/team_scores/`);
+  }
 }

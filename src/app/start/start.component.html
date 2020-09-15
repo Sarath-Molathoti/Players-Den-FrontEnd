@@ -1,0 +1,46 @@
+<!-- <button [disabled]="clicked" (click)="selectThings(); clicked = true;"  class="btn btn-success">Start Game</button> -->
+<button ng-show="clicked" (click)="selectThings()"  class="btn btn-success">Start Game</button>
+
+<table class="table">
+    <thead>
+      <tr>
+      <th>Team1</th>
+      <th>Team2</th>
+      <th>Team3</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th>Player1</th>
+      <th>Player2</th>
+
+
+      <!-- <th>Target Date</th>
+      <th>Is Completed?</th>
+      <th>Update</th>
+      <th>Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let team of randomTeams"> -->
+          <tr>
+        <td>{{randomTeams[0].teamName}}</td>
+        <td>{{randomTeams[1].teamName}}</td>
+        <td>{{randomTeams[2].teamName}}</td>
+        <td>{{firstTeamPlayers[0].playerName}}</td>
+        <td>{{firstTeamPlayers[1].playerName}}</td>
+        <td>{{secondTeamPlayers[0].playerName}}</td>
+        <td>{{secondTeamPlayers[1].playerName}}</td>
+        <td>{{thirdTeamPlayers[0].playerName}}</td>
+        <td>{{thirdTeamPlayers[1].playerName}}</td>
+
+
+        <!-- <td>{{t}}</td>
+        <td>{{todo.done}}</td>
+        <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+        <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td> -->
+        
+      </tr>
+  
+    </tbody>
+  </table>

@@ -9,6 +9,9 @@ import { RegisterTeamComponent } from './register-team/register-team.component';
 import { RegisterPlayerComponent } from './register-player/register-player.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { StartComponent } from './start/start.component';
+import { GameComponent } from './game/game.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     RegisterTeamComponent,
     RegisterPlayerComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LeaderboardComponent,
+    StartComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

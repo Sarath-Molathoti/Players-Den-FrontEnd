@@ -1,0 +1,25 @@
+<h1>LeaderBoard</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+          <th>Team Name</th>
+          <th>Team Caption</th>
+          <th>Team Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of teams;index as i">
+            <td>{{i+1}}</td>
+            <td>{{t.teamName}}</td>
+            <td>{{t.teamCaption}}</td>
+            <td>{{t.teamScore}}</td>
+            <!-- <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+            <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td> -->
+            
+          </tr>
+      
+        </tbody>
+      </table>
+</div>

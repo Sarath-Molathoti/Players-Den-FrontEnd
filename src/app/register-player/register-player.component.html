@@ -1,9 +1,10 @@
 <h1>Player Registration</h1>
 <div class="container">
-    Player Team Name : <input type="text" name="player.player_team_name" [(ngModel)]="player.player_team_name" >
-    Player Name : <input type="text" name="player.player_name" [(ngModel)]="player.player_name" >
-    Player Age : <input type="text" name="player.player_age" [(ngModel)]="player.player_age" >
-    Player Caption : <input type="text" name="player.player_caption" [(ngModel)]="player.player_caption" >
+    Player Team Name : <input type="text" name="player.playerTeamName" [(ngModel)]="player.playerTeamName" >
+    Player Name : <input type="text" name="player.playerName" [(ngModel)]="player.playerName" >
+    Player Age : <input type="text" name="player.playerAge" [(ngModel)]="player.playerAge" >
+    Player Caption : <input type="text" name="player.playerCaption" [(ngModel)]="player.playerCaption" >
+    <!-- <input type="file" name="player.player_pic" (change)="onFileChanged($event)"> -->
     <button (click)=savePlayer() class="btn btn-success">Save</button>
 
 </div>

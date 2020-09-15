@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 export interface Team{
-   team_name?: string;
-   team_caption?: string;
+   teamName?: string;
+   teamCaption?: string;
    //teamId?: number;
-   team_score?: number;
+   teamScore?: number;
 
 }
 
 export interface Player{
-  player_name?: string;
-  player_caption?: string;
+  playerName?: string;
+  playerCaption?: string;
   //teamId?: number;
-  player_score?: number;
-  player_age?: number;
-  player_team_name?: string;
+  playerScore?: number;
+  playerAge?: number;
+  playerTeamName?: string;
+ // player_pic?: File;
 
 }
 @Component({

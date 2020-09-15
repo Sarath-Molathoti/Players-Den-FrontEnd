@@ -22,8 +22,12 @@ export class RegisterPlayerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // public onFileChanged(event) {
+  //       //Select File
+  //       this.player.player_pic = event.target.files[0];
+  //     }
   savePlayer(){
-    this.player.player_score = 0;
+    this.player.playerScore = 0;
     this.teamRegister.createPlayer(this.player).subscribe(
       data=>{
         this.router.navigate([''])

@@ -30,7 +30,7 @@ export class RegisterTeamComponent implements OnInit {
     // this.team.teamName=this.teamName
     // this.team.teamCaption = this.teamCaption
     //console.log(this.teamCaption)
-    this.team.team_score = 0;
+    this.team.teamScore = 0;
     this.teamRegister.createTeam(this.team).subscribe(
       data=>{
         this.router.navigate([''])
