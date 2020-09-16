@@ -13,7 +13,18 @@ export class StartComponent implements OnInit {
   firstTeamPlayers : Player[]
   secondTeamPlayers : Player[]
   thirdTeamPlayers : Player[]
-  clicked = false;
+  clicked:boolean = true;
+  showBody:boolean = false;
+
+  //disabling inputs
+  player11Input: boolean = true;
+  player12Input: boolean = false;
+  player21Input: boolean = false;
+  player22Input: boolean = false;
+  player31Input: boolean = false;
+  player32Input: boolean = false;
+
+
 
 
 
@@ -26,7 +37,8 @@ export class StartComponent implements OnInit {
   }
 
   selectThings(){
-    clicked : false
+    this.clicked = false;
+    this.showBody = true;
     this.selectTeams();
     // this.getFirstTeamUsers(this.randomTeams[0].teamName);
   }
