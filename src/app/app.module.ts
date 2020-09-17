@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { StartComponent } from './start/start.component';
 import { GameComponent } from './game/game.component';
+import { GlobalConstants } from './global-constants';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { GameComponent } from './game/game.component';
     FormsModule, ReactiveFormsModule,
     AppRoutingModule,HttpClientModule
   ],
-  providers: [],
+  providers: [GlobalConstants],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,20 @@
+
+<div class="wholebody">
+    
 <h1>Player Registration</h1>
+<div class="alert alert-warning" *ngIf="ageError">Players who are less than 18 years are not allowed to participate in this game</div>
+<div class="alert alert-warning" *ngIf="agePError">Please Enter Player Age</div>
+<div class="alert alert-warning" *ngIf="nameError">Please Enter Player Name</div>
+<div class="alert alert-warning" *ngIf="pNameError">Please Enter Player Team Name</div>
+
+
 <div class="container">
-    Player Team Name : <input type="text" name="player.playerTeamName" [(ngModel)]="player.playerTeamName" >
+    Player Team Name : <input type="text" name="player.playerTeamName" [(ngModel)]="player.playerTeamName"  >
     Player Name : <input type="text" name="player.playerName" [(ngModel)]="player.playerName" >
     Player Age : <input type="text" name="player.playerAge" [(ngModel)]="player.playerAge" >
     Player Caption : <input type="text" name="player.playerCaption" [(ngModel)]="player.playerCaption" >
     <!-- <input type="file" name="player.player_pic" (change)="onFileChanged($event)"> -->
     <button (click)=savePlayer() class="btn btn-success">Save</button>
+</div>
 
 </div>

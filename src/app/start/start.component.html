@@ -1,38 +1,129 @@
-<!-- <button [disabled]="clicked" (click)="selectThings(); clicked = true;"  class="btn btn-success">Start Game</button> -->
-<!-- <button *ngIf="clicked" (click)="selectThings()"  class="btn btn-success">Start Game</button>
+<!-- NEW TOURNAMENT MESSAGE -->
+  <div class="container" *ngIf="newTournament">
+    Tournament is over.  Start a new Tournament    <button (click)="startNewTournament()"  class="btn btn-success">Start a New Tournament</button> 
 
-<table class="table">
-    <thead>
-      <tr>
-      <th>Team1</th>
-      <th>Team2</th>
-      <th>Team3</th>
-      <th>Team1(Player1)</th>
-      <th>Team1(Player2)</th>
-      <th>Team2(Player1)</th>
-      <th>Team2(Player2)</th>
-      <th>Team3(Player1)</th>
-      <th>Team3(Player2)</th>
-      </tr>
-    </thead>
-    <tbody>
+  </div>
+  <!-- Display Congratulations messages -->
+   <div class="congo" *ngIf="player11message" >
+     Congratulations <b>{{this.firstTeamPlayers[0].playerName}}</b>. You won the game.
+     <pre>Caption: {{this.firstTeamPlayers[0].playerCaption}}</pre>
+     <pre>Score : {{this.firstTeamPlayers[0].playerScore}}</pre>
+     <pre>Team : {{this.firstTeamPlayers[0].playerTeamName}}</pre>
+   </div>
+   <div class="congo" *ngIf="player21message" >
+    Congratulations  <b>{{this.secondTeamPlayers[0].playerName}}</b>. You won the game.
+    <pre>Caption: {{this.secondTeamPlayers[0].playerCaption}}</pre>
+    <pre>Score : {{this.secondTeamPlayers[0].playerScore}}</pre>
+    <pre>Team : {{this.secondTeamPlayers[0].playerTeamName}}</pre>
+  </div>
+  <div class="congo" *ngIf="player31message" >
+    Congratulations <b>{{this.thirdTeamPlayers[0].playerName}}</b>. You won the game.
+    <pre>Caption: {{this.thirdTeamPlayers[0].playerCaption}}</pre>
+    <pre>Score : {{this.thirdTeamPlayers[0].playerScore}}</pre>
+    <pre>Team : {{this.thirdTeamPlayers[0].playerTeamName}}</pre>
+  </div>
+
+  <div class="congo" *ngIf="player12message" >
+    Congratulations <b>{{this.firstTeamPlayers[1].playerName}}</b>. You won the game.
+    <pre>Caption: {{this.firstTeamPlayers[1].playerCaption}}</pre>
+    <pre>Score : {{this.firstTeamPlayers[1].playerScore}}</pre>
+    <pre>Team : {{this.firstTeamPlayers[1].playerTeamName}}</pre>
+  </div>
+  <div class="congo" *ngIf="player22message" >
+   Congratulations  <b>{{this.secondTeamPlayers[1].playerName}}</b>. You won the game.
+   <pre>Caption: {{this.secondTeamPlayers[1].playerCaption}}</pre>
+   <pre>Score : {{this.secondTeamPlayers[1].playerScore}}</pre>
+   <pre>Team : {{this.secondTeamPlayers[1].playerTeamName}}</pre>
+ </div>
+ <div class="congo" *ngIf="player32message" >
+   Congratulations <b>{{this.thirdTeamPlayers[1].playerName}}</b>. You won the game.
+   <pre>Caption: {{this.thirdTeamPlayers[1].playerCaption}}</pre>
+   <pre>Score : {{this.thirdTeamPlayers[1].playerScore}}</pre>
+   <pre>Team : {{this.thirdTeamPlayers[1].playerTeamName}}</pre>
+ </div>
+
+<!-- DISPLAYING FIRST ROUND SCORES -->
+  <div class="container" *ngIf="firstRoundResult" style="margin-top: 30px;">
+    <table class="table">
+        <thead>
           <tr>
-        <td>{{randomTeams[0].teamName}}</td>
-        <td>{{randomTeams[1].teamName}}</td>
-        <td>{{randomTeams[2].teamName}}</td>
-        <td>{{firstTeamPlayers[0].playerName}}</td>
-        <td>{{firstTeamPlayers[1].playerName}}</td>
-        <td>{{secondTeamPlayers[0].playerName}}</td>
-        <td>{{secondTeamPlayers[1].playerName}}</td>
-        <td>{{thirdTeamPlayers[0].playerName}}</td>
-        <td>{{thirdTeamPlayers[1].playerName}}</td>
-        
-      </tr>
-  
-    </tbody>
-  </table> -->
-   <button *ngIf="clicked" (click)="selectThings()"  class="btn btn-success">Start Game</button> 
+          <th>Team Name(Player Name)</th>
+          <th>Team Caption</th>
+          <th>Team Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{randomTeams[0].teamName}}({{firstTeamPlayers[0].playerName}})</td>
+            <td>{{firstTeamPlayers[0].playerCaption}}</td>
+            <td>{{randomTeams[0].teamScore}}</td>
+          </tr>
+          <tr> 
+            <td>{{randomTeams[1].teamName}}({{secondTeamPlayers[0].playerName}})</td>
+            <td>{{secondTeamPlayers[0].playerCaption}}</td>
+            <td>{{randomTeams[1].teamScore}}</td>
+          </tr>
+          <tr>
+            <td>{{randomTeams[2].teamName}}({{thirdTeamPlayers[0].playerName}})</td>
+            <td>{{thirdTeamPlayers[0].playerCaption}}</td>
+            <td>{{randomTeams[2].teamScore}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
 
+      <button (click)= "startSecondRound()" class="btn btn-success">Move to Second Round</button> 
+
+</div>
+
+
+<!-- DISPLAYING SECOND ROUND SCORES -->
+<div class="container" *ngIf="secondRoundResult" style="margin-top: 30px;">
+  <table class="table">
+      <thead>
+        <tr>
+        <th>Team Name(Player Name)</th>
+        <th>Team Caption</th>
+        <th>Team Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{randomTeams[0].teamName}}({{firstTeamPlayers[1].playerName}})</td>
+          <td>{{firstTeamPlayers[1].playerCaption}}</td>
+          <td>{{randomTeams[0].teamScore}}</td>
+        </tr>
+        <tr> 
+          <td>{{randomTeams[1].teamName}}({{secondTeamPlayers[1].playerName}})</td>
+          <td>{{secondTeamPlayers[1].playerCaption}}</td>
+          <td>{{randomTeams[1].teamScore}}</td>
+        </tr>
+        <tr>
+          <td>{{randomTeams[2].teamName}}({{thirdTeamPlayers[1].playerName}})</td>
+          <td>{{thirdTeamPlayers[1].playerCaption}}</td>
+          <td>{{randomTeams[2].teamScore}}</td>
+        </tr>
+    
+      </tbody>
+    </table>
+
+    <button class="btn btn-success">Move to Next Game</button> 
+
+</div>
+
+
+ <!-- DISPLAYING GAME BUTTONS -->
+   <button *ngIf="clickedGame1" (click)="selectThings()"  class="btn btn-success">Start Game1{{c}}</button> 
+   <button *ngIf="clickedGame2" (click)="selectThings()"  class="btn btn-success">Start Game2</button> 
+   <button *ngIf="clickedGame3" (click)="selectThings()"  class="btn btn-success">Start Game3</button> 
+   <button *ngIf="clickedGame4" (click)="selectThings()"  class="btn btn-success">Start Game4</button> 
+   <button *ngIf="clickedGame5" (click)="selectThings()"  class="btn btn-success">Start Game5</button> 
+
+<!-- DISPLAYING TIME -->
+   <div *ngIf="showBody">
+     Time : {{now}} 
+   </div>
+   <!-- DISPLAYING FIRST ROUND BODY -->
   <div class="row" style="margin-top: 140px;" *ngIf="showBody">
     <div class="column" style="background-color:#aaa;">
       <table class="table">
@@ -44,23 +135,23 @@
         <tbody>
           <tr>
             <td>{{firstTeamPlayers[0].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player11Input"></td>
-            <td><button style="width: 70px;" *ngIf="player11Input">save</button></td>
+            <td><input type="number" style="width: 100px;" *ngIf="player11Input" name="player11Value" [(ngModel)]="player11Value"></td>
+            <td><button style="width: 70px;" *ngIf="player11Input" (click)="player11Click()">save</button></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>{{firstTeamPlayers[1].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player12Input"></td>
-            <td><button style="width: 70px;" *ngIf="player12Input">save</button></td>
-          </tr>
+            <td><input type="number" style="width: 100px;" *ngIf="player12Input" name="player12Value" [(ngModel)]="player12Value"></td>
+            <td><button style="width: 70px;" *ngIf="player12Input" (click)="player12Click()">save</button></td>
+          </tr> -->
           <tr>
-            <td colspan="3">{{firstTeamPlayers[0].playerName}} Score : </td>
+            <td colspan="3">{{firstTeamPlayers[0].playerName}} Score : {{firstTeamPlayers[0].playerScore}} </td>
           </tr>
-          <tr>
-            <td colspan="3">{{firstTeamPlayers[1].playerName}} Score : </td>
-          </tr>
-          <tr>
+          <!-- <tr>
+            <td colspan="3">{{firstTeamPlayers[1].playerName}} Score : {{firstTeamPlayers[1].playerScore}}</td>
+          </tr> -->
+          <!-- <tr>
             <td colspan="3">{{randomTeams[0].teamName}} Score : </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table> 
     </div>
@@ -74,23 +165,23 @@
         <tbody>
           <tr>
             <td>{{secondTeamPlayers[0].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player21Input"></td>
-            <td><button style="width: 70px;" *ngIf="player21Input">save</button></td>
+            <td><input type="number" style="width: 100px;" *ngIf="player21Input" name="player21Value" [(ngModel)]="player21Value"></td>
+            <td><button style="width: 70px;" *ngIf="player21Input" (click)="player21Click()">save</button></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>{{secondTeamPlayers[1].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player22Input"></td>
-            <td><button style="width: 70px;" *ngIf="player22Input"> save</button></td>
-          </tr>
+            <td><input type="number" style="width: 100px;" *ngIf="player22Input" name="player22Value" [(ngModel)]="player22Value"></td>
+            <td><button style="width: 70px;" *ngIf="player22Input" (click)="player22Click()"> save</button></td>
+          </tr> -->
           <tr>
-            <td colspan="3">{{secondTeamPlayers[0].playerName}} Score : </td>
+            <td colspan="3">{{secondTeamPlayers[0].playerName}} Score : {{secondTeamPlayers[0].playerScore}}</td>
           </tr>
-          <tr>
-            <td colspan="3">{{secondTeamPlayers[1].playerName}} Score : </td>
-          </tr>
-          <tr>
+          <!-- <tr>
+            <td colspan="3">{{secondTeamPlayers[1].playerName}} Score : {{secondTeamPlayers[1].playerScore}}</td>
+          </tr> -->
+          <!-- <tr>
             <td colspan="3">{{randomTeams[1].teamName}} Score : </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table> 
     </div>
@@ -104,23 +195,23 @@
         <tbody>
           <tr>
             <td>{{thirdTeamPlayers[0].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player31Input"></td>
-            <td><button style="width: 70px;" *ngIf="player31Input">save</button></td>
+            <td><input type="number" style="width: 100px;" *ngIf="player31Input" name="player31Value" [(ngModel)]="player31Value"></td>
+            <td><button style="width: 70px;" *ngIf="player31Input" (click)="player31Click()">save</button></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>{{thirdTeamPlayers[1].playerName}}</td>
-            <td><input type="number" style="width: 100px;" *ngIf="player32Input"></td>
-            <td><button style="width: 70px;" *ngIf="player32Input">save</button></td>
-          </tr>
+            <td><input type="number" style="width: 100px;" *ngIf="player32Input" name="player32Value" [(ngModel)]="player32Value"></td>
+            <td><button style="width: 70px;" *ngIf="player32Input" (click)="player32Click()">save</button></td>
+          </tr> -->
           <tr>
-            <td colspan="3">{{thirdTeamPlayers[0].playerName}} Score : </td>
+            <td colspan="3">{{thirdTeamPlayers[0].playerName}} Score : {{thirdTeamPlayers[0].playerScore}}</td>
           </tr>
-          <tr>
-            <td colspan="3">{{thirdTeamPlayers[1].playerName}} Score : </td>
-          </tr>
-          <tr>
+          <!-- <tr>
+            <td colspan="3">{{thirdTeamPlayers[1].playerName}} Score : {{thirdTeamPlayers[1].playerScore}}</td>
+          </tr> -->
+          <!-- <tr>
             <td colspan="3">{{randomTeams[2].teamName}} Score : </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table> 
     </div>
@@ -129,3 +220,107 @@
       <p>Some text..</p>
     </div> -->
   </div>
+
+
+  <!-- SECOND ROUND -->
+  <div *ngIf="showBody2">
+    Time : {{now}} 
+  </div>
+
+  <div class="row" style="margin-top: 140px;" *ngIf="showBody2">
+    <div class="column" style="background-color:#aaa;">
+      <table class="table">
+        <thead>
+          <tr>
+          <th>{{randomTeams[0].teamName}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>{{firstTeamPlayers[0].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player11Input" name="player11Value" [(ngModel)]="player11Value"></td>
+            <td><button style="width: 70px;" *ngIf="player11Input" (click)="player11Click()">save</button></td>
+          </tr> -->
+          <tr>
+            <td>{{firstTeamPlayers[1].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player12Input" name="player12Value" [(ngModel)]="player12Value"></td>
+            <td><button style="width: 70px;" *ngIf="player12Input" (click)="player12Click()">save</button></td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{firstTeamPlayers[0].playerName}} Score : {{firstTeamPlayers[0].playerScore}} </td>
+          </tr> -->
+          <tr>
+            <td colspan="3">{{firstTeamPlayers[1].playerName}} Score : {{firstTeamPlayers[1].playerScore}}</td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{randomTeams[0].teamName}} Score : </td>
+          </tr> -->
+        </tbody>
+      </table> 
+    </div>
+    <div class="column" style="background-color:#bbb;">
+      <table class="table">
+        <thead>
+          <tr>
+          <th>{{randomTeams[1].teamName}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>{{secondTeamPlayers[0].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player21Input" name="player21Value" [(ngModel)]="player21Value"></td>
+            <td><button style="width: 70px;" *ngIf="player21Input" (click)="player21Click()">save</button></td>
+          </tr> -->
+          <tr>
+            <td>{{secondTeamPlayers[1].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player22Input" name="player22Value" [(ngModel)]="player22Value"></td>
+            <td><button style="width: 70px;" *ngIf="player22Input" (click)="player22Click()"> save</button></td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{secondTeamPlayers[0].playerName}} Score : {{secondTeamPlayers[0].playerScore}}</td>
+          </tr> -->
+          <tr>
+            <td colspan="3">{{secondTeamPlayers[1].playerName}} Score : {{secondTeamPlayers[1].playerScore}}</td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{randomTeams[1].teamName}} Score : </td>
+          </tr> -->
+        </tbody>
+      </table> 
+    </div>
+    <div class="column" style="background-color:#ccc;">
+      <table class="table">
+        <thead>
+          <tr>
+          <th>{{randomTeams[2].teamName}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>{{thirdTeamPlayers[0].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player31Input" name="player31Value" [(ngModel)]="player31Value"></td>
+            <td><button style="width: 70px;" *ngIf="player31Input" (click)="player31Click()">save</button></td>
+          </tr> -->
+          <tr>
+            <td>{{thirdTeamPlayers[1].playerName}}</td>
+            <td><input type="number" style="width: 100px;" *ngIf="player32Input" name="player32Value" [(ngModel)]="player32Value"></td>
+            <td><button style="width: 70px;" *ngIf="player32Input" (click)="player32Click()">save</button></td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{thirdTeamPlayers[0].playerName}} Score : {{thirdTeamPlayers[0].playerScore}}</td>
+          </tr> -->
+          <tr>
+            <td colspan="3">{{thirdTeamPlayers[1].playerName}} Score : {{thirdTeamPlayers[1].playerScore}}</td>
+          </tr>
+          <!-- <tr>
+            <td colspan="3">{{randomTeams[2].teamName}} Score : </td>
+          </tr> -->
+        </tbody>
+      </table> 
+    </div>
+    <!-- <div class="column" style="background-color:#ddd;">
+      <h2>Column 4</h2>
+      <p>Some text..</p>
+    </div> -->
+  </div>
+

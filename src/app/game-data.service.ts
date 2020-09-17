@@ -7,6 +7,8 @@ import { Team, Player } from './welcome/welcome.component';
 })
 export class GameDataService {
 
+  
+
   constructor(
     private http:HttpClient
   ) { }
@@ -17,6 +19,17 @@ export class GameDataService {
   getFirstTeamPlayers(teamName){
     return this.http.get<Player[]>(`http://localhost:8080/${teamName}/get_first_team_players/`);
 
+  }
+  updateScore(player_name,player_value,player_score,player){
+    return this.http.put<number>(`http://localhost:8080/${player_name}/${player_value}/${player_score}/`,player);
+    //return this.score;
+  }
+  clearScores(player){
+    return this.http.put<number>(`http://localhost:8080/clear_scores/`,player);
+  }
+
+  updateTeamScore(team_name,team_score,team){
+    return this.http.put<number>(`http://localhost:8080/${team_name}/${team_score}/`,team);
   }
   
 }

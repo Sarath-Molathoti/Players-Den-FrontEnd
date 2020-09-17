@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # PlayersDen
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
@@ -29,3 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # Player-s-Den-Front-end
 >>>>>>> 3a00716e0e71f6d0d164fd919c2322d6cafb2de2
+=======
+# Players-FrontEnd
+>>>>>>> 28123648aa22135462c65cb97c21fea0b6ebeb21
