@@ -13,6 +13,14 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { StartComponent } from './start/start.component';
 import { GameComponent } from './game/game.component';
 import { GlobalConstants } from './global-constants';
+import { StatsPageComponent } from './stats-page/stats-page.component';
+import {CountdownModule} from 'ngx-countdown';
+import {NgxTimerModule} from 'ngx-timer';
+
+import { CountUpModule } from 'ngx-countup';
+
+
+
 
 
 @NgModule({
@@ -23,12 +31,13 @@ import { GlobalConstants } from './global-constants';
     WelcomeComponent,
     LeaderboardComponent,
     StartComponent,
-    GameComponent
+    GameComponent,
+    StatsPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,CountdownModule, NgxTimerModule
   ],
   providers: [GlobalConstants],
   bootstrap: [AppComponent]

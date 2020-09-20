@@ -1,0 +1,35 @@
+
+html,body{
+    height: 100%;
+}
+body{
+    background-image: url('/assets/images/game3.jpg') ;
+/* background-color: blue; */
+
+   
+
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  margin-right: 200px;
+
+  height: 670px;
+  width: 1300px;
+  margin-left: -97px;
+
+  
+  
+}
+th{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    color: red;
+    font-family: sans-serif;
+    font-style: bold;
+}
+

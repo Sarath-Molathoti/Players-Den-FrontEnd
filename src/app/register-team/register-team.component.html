@@ -1,11 +1,47 @@
-<h1>Team Registration</h1>
+<!-- <h1>Team Registration</h1> -->
 <!-- <div class="container">
 <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
 <div> -->
 
-  <div class="container">
-Team Name : <input type="text" name="team.teamName" [(ngModel)]="team.teamName">
-Team Caption : <input type="text" name="team.teamCaption" [(ngModel)]="team.teamCaption" >
-<button (click)=saveTeam() class="btn btn-success">Save</button>
+  <!-- <div class="container">
+    <pre>Team Name : <input type="text" name="team.teamName" [(ngModel)]="team.teamName"></pre>
+    <pre>Team Caption : <input type="text" name="team.teamCaption" [(ngModel)]="team.teamCaption" ></pre>
+    <pre><button (click)=saveTeam() class="btn btn-success">Save</button></pre>
 
+</div> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="t">
+    <h2>Team Registration</h2>
+
+  <pre class="s">Team Name  </pre>
+  <pre><input type="text" name="team.teamName" [(ngModel)]="team.teamName"></pre>
+  <pre class="s">Team Caption </pre>
+  <pre><input type="text" name="team.teamCaption" [(ngModel)]="team.teamCaption" ></pre>
+  <pre><button (click)=saveTeam() class="btn btn-success">Register</button></pre>
 </div>
+  <!-- <table class="t">
+    <thead>
+      <th>Team Registration</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Team Name  </td>
+        <td> <input type="text" name="team.teamName" [(ngModel)]="team.teamName"></td>
+      </tr>
+      <tr>
+        <td>Team Caption  </td>
+        <td> <input type="text" name="team.teamCaption" [(ngModel)]="team.teamCaption" ></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button (click)=saveTeam() class="btn btn-success">Save</button> </td>
+      </tr>
+    </tbody>
+  </table> -->
+
+</body>
+</html>
+
+

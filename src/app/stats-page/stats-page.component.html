@@ -1,0 +1,54 @@
+
+<div *ngIf="total">
+    <ul>
+        <li *ngFor="let group of tournaments">
+        Tournament Number : {{group.tId}} , Tournament Date : {{group.tDate}}
+        <ul>
+            <li *ngFor="let light of group.tDetails">
+            Team Name : {{light.tHistoryTeam}}  , TeamScore : {{light.tHistoryScore}}
+    
+            </li>
+        </ul>
+        </li>
+    </ul>
+</div>
+<input type="text" name="tNumber" [(ngModel)]="tNumber" >
+    <button (click)="getByNumber()" class="btn btn-success">check</button>
+    <input type="text" name="tDateToSearch" [(ngModel)]="tDateToSearch" >
+    <button (click)="getByDate()" class="btn btn-success">check By Date</button>
+
+<div *ngIf="showByNumber">
+    
+    
+      <div>
+          {{p.tId}}{{p.tDate}}
+      </div>
+      <div *ngFor="let i of p.tDetails">
+        Team Name : {{i.tHistoryTeam}}  , TeamScore : {{i.tHistoryScore}}
+    
+      </div>
+</div>
+
+<div *ngIf="showByDate">
+    <ul>
+        <li *ngFor="let group of q">
+        Tournament Number : {{group.tId}} , Tournament Date : {{group.tDate}}
+        <ul>
+            <li *ngFor="let light of group.tDetails">
+            Team Name : {{light.tHistoryTeam}}  , TeamScore : {{light.tHistoryScore}}
+    
+            </li>
+        </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- id :{{tournaments[0].tId}}
+date : {{tournaments[0].tDate}}
+id : {{tournaments[1].tId}}
+date :{{tournaments[1].tDate}}
+name: {{tournaments[0].tDetails[0].tHistoryName}}
+scoer:{{tournaments[0].tDetails[0].tHistoryScore}} -->
+

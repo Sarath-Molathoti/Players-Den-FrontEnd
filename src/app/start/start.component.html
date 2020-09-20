@@ -1,45 +1,49 @@
 <!-- NEW TOURNAMENT MESSAGE -->
+<!-- <countdown [startTime]=10 [endTime]=0></countdown> -->
+
+
+
   <div class="container" *ngIf="newTournament">
     Tournament is over.  Start a new Tournament    <button (click)="startNewTournament()"  class="btn btn-success">Start a New Tournament</button> 
 
   </div>
   <!-- Display Congratulations messages -->
    <div class="congo" *ngIf="player11message" >
-     Congratulations <b>{{this.firstTeamPlayers[0].playerName}}</b>. You won the game.
-     <pre>Caption: {{this.firstTeamPlayers[0].playerCaption}}</pre>
-     <pre>Score : {{this.firstTeamPlayers[0].playerScore}}</pre>
-     <pre>Team : {{this.firstTeamPlayers[0].playerTeamName}}</pre>
+     Congratulations <b>{{firstTeamPlayers[0].playerName}}</b>. You won the game.
+     <pre>Caption: {{firstTeamPlayers[0].playerCaption}}</pre>
+     <pre>Score : {{firstTeamPlayers[0].playerScore}}</pre>
+     <pre>Team : {{firstTeamPlayers[0].playerTeamName}}</pre>
    </div>
    <div class="congo" *ngIf="player21message" >
-    Congratulations  <b>{{this.secondTeamPlayers[0].playerName}}</b>. You won the game.
-    <pre>Caption: {{this.secondTeamPlayers[0].playerCaption}}</pre>
-    <pre>Score : {{this.secondTeamPlayers[0].playerScore}}</pre>
-    <pre>Team : {{this.secondTeamPlayers[0].playerTeamName}}</pre>
+    Congratulations  <b>{{secondTeamPlayers[0].playerName}}</b>. You won the game.
+    <pre>Caption: {{secondTeamPlayers[0].playerCaption}}</pre>
+    <pre>Score : {{secondTeamPlayers[0].playerScore}}</pre>
+    <pre>Team : {{secondTeamPlayers[0].playerTeamName}}</pre>
   </div>
   <div class="congo" *ngIf="player31message" >
-    Congratulations <b>{{this.thirdTeamPlayers[0].playerName}}</b>. You won the game.
-    <pre>Caption: {{this.thirdTeamPlayers[0].playerCaption}}</pre>
-    <pre>Score : {{this.thirdTeamPlayers[0].playerScore}}</pre>
-    <pre>Team : {{this.thirdTeamPlayers[0].playerTeamName}}</pre>
+    Congratulations <b>{{thirdTeamPlayers[0].playerName}}</b>. You won the game.
+    <pre>Caption: {{thirdTeamPlayers[0].playerCaption}}</pre>
+    <pre>Score : {{thirdTeamPlayers[0].playerScore}}</pre>
+    <pre>Team : {{thirdTeamPlayers[0].playerTeamName}}</pre>
   </div>
 
   <div class="congo" *ngIf="player12message" >
-    Congratulations <b>{{this.firstTeamPlayers[1].playerName}}</b>. You won the game.
-    <pre>Caption: {{this.firstTeamPlayers[1].playerCaption}}</pre>
-    <pre>Score : {{this.firstTeamPlayers[1].playerScore}}</pre>
-    <pre>Team : {{this.firstTeamPlayers[1].playerTeamName}}</pre>
+    Congratulations <b>{{firstTeamPlayers[1].playerName}}</b>. You won the game.
+    <pre>Caption: {{firstTeamPlayers[1].playerCaption}}</pre>
+    <pre>Score : {{firstTeamPlayers[1].playerScore}}</pre>
+    <pre>Team : {{firstTeamPlayers[1].playerTeamName}}</pre>
   </div>
   <div class="congo" *ngIf="player22message" >
-   Congratulations  <b>{{this.secondTeamPlayers[1].playerName}}</b>. You won the game.
-   <pre>Caption: {{this.secondTeamPlayers[1].playerCaption}}</pre>
-   <pre>Score : {{this.secondTeamPlayers[1].playerScore}}</pre>
-   <pre>Team : {{this.secondTeamPlayers[1].playerTeamName}}</pre>
+   Congratulations  <b>{{secondTeamPlayers[1].playerName}}</b>. You won the game.
+   <pre>Caption: {{secondTeamPlayers[1].playerCaption}}</pre>
+   <pre>Score : {{secondTeamPlayers[1].playerScore}}</pre>
+   <pre>Team : {{secondTeamPlayers[1].playerTeamName}}</pre>
  </div>
  <div class="congo" *ngIf="player32message" >
-   Congratulations <b>{{this.thirdTeamPlayers[1].playerName}}</b>. You won the game.
-   <pre>Caption: {{this.thirdTeamPlayers[1].playerCaption}}</pre>
-   <pre>Score : {{this.thirdTeamPlayers[1].playerScore}}</pre>
-   <pre>Team : {{this.thirdTeamPlayers[1].playerTeamName}}</pre>
+   Congratulations <b>{{thirdTeamPlayers[1].playerName}}</b>. You won the game.
+   <pre>Caption: {{thirdTeamPlayers[1].playerCaption}}</pre>
+   <pre>Score : {{thirdTeamPlayers[1].playerScore}}</pre>
+   <pre>Team : {{thirdTeamPlayers[1].playerTeamName}}</pre>
  </div>
 
 <!-- DISPLAYING FIRST ROUND SCORES -->
@@ -47,26 +51,26 @@
     <table class="table">
         <thead>
           <tr>
-          <th>Team Name(Player Name)</th>
+          <th>Player Name</th>
           <th>Team Caption</th>
           <th>Team Score</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{{randomTeams[0].teamName}}({{firstTeamPlayers[0].playerName}})</td>
+            <td>{{firstTeamPlayers[0].playerName}}</td>
             <td>{{firstTeamPlayers[0].playerCaption}}</td>
-            <td>{{randomTeams[0].teamScore}}</td>
+            <td>{{firstTeamPlayers[0].playerScore}}</td>
           </tr>
           <tr> 
-            <td>{{randomTeams[1].teamName}}({{secondTeamPlayers[0].playerName}})</td>
+            <td>{{secondTeamPlayers[0].playerName}}</td>
             <td>{{secondTeamPlayers[0].playerCaption}}</td>
-            <td>{{randomTeams[1].teamScore}}</td>
+            <td>{{secondTeamPlayers[0].playerScore}}</td>
           </tr>
           <tr>
             <td>{{randomTeams[2].teamName}}({{thirdTeamPlayers[0].playerName}})</td>
             <td>{{thirdTeamPlayers[0].playerCaption}}</td>
-            <td>{{randomTeams[2].teamScore}}</td>
+            <td>{{thirdTeamPlayers[0].playerScore}}</td>
           </tr>
       
         </tbody>
@@ -82,38 +86,38 @@
   <table class="table">
       <thead>
         <tr>
-        <th>Team Name(Player Name)</th>
+        <th>Player Name</th>
         <th>Team Caption</th>
         <th>Team Score</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{randomTeams[0].teamName}}({{firstTeamPlayers[1].playerName}})</td>
+          <td>{{firstTeamPlayers[1].playerName}}</td>
           <td>{{firstTeamPlayers[1].playerCaption}}</td>
-          <td>{{randomTeams[0].teamScore}}</td>
+          <td>{{firstTeamPlayers[1].playerScore}}</td>
         </tr>
         <tr> 
-          <td>{{randomTeams[1].teamName}}({{secondTeamPlayers[1].playerName}})</td>
+          <td>{{secondTeamPlayers[1].playerName}}</td>
           <td>{{secondTeamPlayers[1].playerCaption}}</td>
-          <td>{{randomTeams[1].teamScore}}</td>
+          <td>{{secondTeamPlayers[1].playerScore}}</td>
         </tr>
         <tr>
-          <td>{{randomTeams[2].teamName}}({{thirdTeamPlayers[1].playerName}})</td>
+          <td>{{thirdTeamPlayers[1].playerName}}</td>
           <td>{{thirdTeamPlayers[1].playerCaption}}</td>
-          <td>{{randomTeams[2].teamScore}}</td>
+          <td>{{thirdTeamPlayers[1].playerScore}}</td>
         </tr>
     
       </tbody>
     </table>
 
-    <button class="btn btn-success">Move to Next Game</button> 
+    <button class="btn btn-success" (click)="startNewGame()">Move to Next Game</button> 
 
 </div>
 
 
  <!-- DISPLAYING GAME BUTTONS -->
-   <button *ngIf="clickedGame1" (click)="selectThings()"  class="btn btn-success">Start Game1{{c}}</button> 
+   <button *ngIf="clickedGame1" (click)="selectThings()"  class="btn btn-success">Start Game1</button> 
    <button *ngIf="clickedGame2" (click)="selectThings()"  class="btn btn-success">Start Game2</button> 
    <button *ngIf="clickedGame3" (click)="selectThings()"  class="btn btn-success">Start Game3</button> 
    <button *ngIf="clickedGame4" (click)="selectThings()"  class="btn btn-success">Start Game4</button> 
@@ -121,7 +125,10 @@
 
 <!-- DISPLAYING TIME -->
    <div *ngIf="showBody">
-     Time : {{now}} 
+     Time : {{now}}  <pre> Time since game is on : {{time1.toISOString().substr(11,8)}}</pre>
+     <!-- <div class="container" *ngFor="let g of randomTeams[0].players">
+      {{g.playerName}}
+     </div> -->
    </div>
    <!-- DISPLAYING FIRST ROUND BODY -->
   <div class="row" style="margin-top: 140px;" *ngIf="showBody">
@@ -224,7 +231,8 @@
 
   <!-- SECOND ROUND -->
   <div *ngIf="showBody2">
-    Time : {{now}} 
+    Time : {{now}}   <pre> Time since game is on : {{time1.toISOString().substr(11,8)}}</pre>
+    <pre> Time since round is on : {{time2.toISOString().substr(11,8)}}</pre>
   </div>
 
   <div class="row" style="margin-top: 140px;" *ngIf="showBody2">

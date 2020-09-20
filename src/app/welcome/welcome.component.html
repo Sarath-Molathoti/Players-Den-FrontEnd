@@ -1,8 +1,8 @@
-<div class="container" >
+<!-- <div class="container" >
     <marquee behavior="alternate" style="margin-top: 70px;"><h1>Welcome to Player's Den</h1></marquee>
     <!-- <div class="smooth-scroll"><h1 >Welcome to Player's Den</h1></div> -->
 
-    <table>
+    <!-- <table>
         <thead>
 
         </thead>
@@ -30,4 +30,25 @@
         </tbody>
     </table>
 
-</div>
+</div> --> 
+ 
+
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- {{time.toISOString().substr(11,8)}} -->
+    <!-- <button (click)="startTimer()"> start</button> -->
+    <div class="bg" >
+        <marquee behavior="alternate" style="margin-top: 50px;margin-bottom: 20px;color: white;"><h1>Welcome to Player's Den</h1></marquee>
+        
+        <pre><button (click)="goToRegisterTeam()" >Register Team</button> </pre>
+        <pre><button (click)="goToRegisterPlayer()" >Player Registration</button> </pre>
+        <pre><button (click)="goToLeaderBoard()" >Leaderboard</button></pre>
+        <pre><button (click)="goToTournament()">Tournament</button></pre>
+        <pre><button (click)="goToStats()" >Check Stats</button> </pre>
+        
+        </div>
+
+
+</body>
+</html>

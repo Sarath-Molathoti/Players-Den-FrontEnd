@@ -1,0 +1,596 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --git-dir
+Open repository: /home/runner/frontend/players-den
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git check-ignore -v -z --stdin
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/stats-page/stats-page.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.html
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/register-player/register-player.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/register-player/register-player.component.css
+> git cat-file -s e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/welcome/welcome.component.spec.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.spec.ts
+> git cat-file -s 949ca3c5db0caf79f8351e17e4635cab6862d192
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/stats-page/stats-page.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.html
+> git show --textconv :src/app/stats-page/stats-page.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.ts
+> git show --textconv :src/app/register-team/register-team.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/register-team/register-team.component.ts
+> git cat-file -s bf40e0a5ca8d06e14b652b99c99e338fbcbc2a01
+> git show --textconv :src/app/stats-page/stats-page.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.ts
+> git show --textconv :src/app/stats-page/stats-page.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.html
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/register-player/register-player.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/register-player/register-player.component.html
+> git cat-file -s 383f84dc985aff430810fbceff7c7039d14e2b76
+> git show --textconv :src/app/stats-page/stats-page.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/stats-page/stats-page.component.html
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c
+> git show --textconv :src/app/welcome/welcome.component.css
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git show --textconv :src/app/welcome/welcome.component.spec.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.spec.ts
+> git cat-file -s 949ca3c5db0caf79f8351e17e4635cab6862d192
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/welcome/welcome.component.html
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git cat-file -s 065986d1c489f90d7dad5faac7808d444528d38d
+> git show --textconv :src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git rev-list --count f8510fbdbfaae8a323d28fa9b416c4e2a7d09ce1.. -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n4 -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/app.module.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/app.module.ts
+> git cat-file -s 8f66599c8eb3203942847c7acd599ece51f1a05b
+> git show --textconv :src/app/welcome/welcome.component.ts
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.ts
+> git cat-file -s 4ad5a28177e029a0627960e4bd902d3e21d2392e
+> git show --textconv :src/app/welcome/welcome.component.css
+> git ls-files --stage -- /home/runner/frontend/players-den/src/app/welcome/welcome.component.css
+> git cat-file -s 96910f8347419f2e29552b7636104647f08f068c

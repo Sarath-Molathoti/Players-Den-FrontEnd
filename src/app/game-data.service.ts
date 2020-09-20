@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Team, Player } from './welcome/welcome.component';
+import { Team, Player, Tournament } from './welcome/welcome.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,28 @@ export class GameDataService {
 
   updateTeamScore(team_name,team_score,team){
     return this.http.put<number>(`http://localhost:8080/${team_name}/${team_score}/`,team);
+  }
+
+  getTeamScore(teamName){
+    return this.http.get<number>(`http://localhost:8080/${teamName}/`);
+
+  }
+
+  clearTeamScores(sample){
+    return this.http.put<number>(`http://localhost:8080/clear_team_scores/`,sample);
+  }
+
+  getTournaments(){
+    return this.http.get<Tournament[]>(`http://localhost:8080/tournaments/`);
+
+  }
+  getTournamentByNumber(tournament_number){
+     return this.http.get<Tournament>(`http://localhost:8080/${tournament_number}/detail/`);
+
+   }
+   getTournamentByDate(tournament_date){
+    return this.http.get<Tournament[]>(`http://localhost:8080/${tournament_date}/tdetails/`);
+
   }
   
 }

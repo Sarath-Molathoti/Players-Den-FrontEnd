@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameDataService } from '../game-data.service';
 import { Team, Player } from '../welcome/welcome.component';
 import { GlobalConstants } from '../global-constants';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { GlobalConstants } from '../global-constants';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
+
+
+  date = new Date('2019-01-26T00:00:00');
 
   gamesCounter : number;
 
@@ -63,6 +67,9 @@ export class StartComponent implements OnInit {
   prev1: number = 0;
   prev2: number = 0;
   prev3: number = 0;
+  prev4: number = 0;
+  prev5: number = 0;
+  prev6: number = 0;
 
   newTournament : boolean = false;
 
@@ -70,11 +77,20 @@ export class StartComponent implements OnInit {
   counter: number = 0;
 
   sample : number;
+  temp : number;
 
-  now: string
+  now: string;
+
+  interval1;
+  time1 =  new Date(null);
+
+  interval2;
+  time2 =  new Date(null);
+  
   constructor(
     private gameData : GameDataService,
-    public global : GlobalConstants
+    public global : GlobalConstants,
+    private router : Router
   ) {
     this.gamesCounter = global.gameCounter
     if(this.gamesCounter==0){
@@ -84,6 +100,11 @@ export class StartComponent implements OnInit {
       this.clickedGame3 = true;
       this.clickedGame4 = true;
       this.clickedGame5 = true;
+      this.gameData.clearTeamScores(this.temp).subscribe(
+        data=>{
+          this.temp = data;
+        }
+      )
      }
      else if(this.gamesCounter==1){
       this.clickedGame1 = false;
@@ -114,11 +135,19 @@ export class StartComponent implements OnInit {
       this.clickedGame5 = true;
      }else{
        global.gameCounter = 0;
+       this.gamesCounter = 0;
        this.newTournament = true;
      }
     setInterval(() => {
       this.now = new Date().toString().split(' ')[4];
+      
+
     }, 1);
+
+    this.interval1 = setInterval(()=>{
+      this.time1.setSeconds(this.time1.getSeconds() + 1);
+    },1000)
+    //clear all players scores
     this.gameData.clearScores("clear").subscribe(
       data=>{
          
@@ -130,9 +159,15 @@ export class StartComponent implements OnInit {
   }
   
   startNewTournament(){
-    window.location.reload();
+    //window.location.reload();
+    this.router.navigate(['']);
   }
 
+  startNewGame(){
+        //window.location.reload();
+
+   this.router.navigate(['']);
+  }
 
   selectThings(){
     this.gamesCounter = this.gamesCounter + 1;
@@ -145,15 +180,23 @@ export class StartComponent implements OnInit {
 
     this.showBody = true;
     this.selectTeams();
-    // this.getFirstTeamUsers(this.randomTeams[0].teamName);
+    this.gameData.getTeamScore(this.randomTeams[0].teamName).subscribe(
+      data=>{
+        this.randomTeams[0].teamScore = data;
+        this.gameData.getTeamScore(this.randomTeams[1].teamName).subscribe(
+          data=>{
+            this.randomTeams[1].teamScore = data;
+            this.gameData.getTeamScore(this.randomTeams[2].teamName).subscribe(
+              data=>{
+                this.randomTeams[2].teamScore = data;
+              }
+            )
+          }
+        )
+      }
+    )
   }
-  // getFirstTeamUsers(teamName: string) {
-  //   this.gameData.getFirstTeamPlayers(teamName).subscribe(
-  //     data=>{
-  //       this.firstTeamPlayers=data;
-  //     }
-  //   )
-  // }
+  
 
   selectTeams(){
     this.gameData.getTeams().subscribe(
@@ -183,7 +226,8 @@ export class StartComponent implements OnInit {
       data=>{
         this.player11Score = data;
         this.firstTeamPlayers[0].playerScore = data;
-        this.randomTeams[0].teamScore = data;
+        this.randomTeams[0].teamScore = ((data + this.randomTeams[0].teamScore) - this.prev4);
+        this.prev4 = data;
 
         this.gameData.updateTeamScore(this.randomTeams[0].teamName,this.randomTeams[0].teamScore,this.randomTeams[0]).subscribe(
           data=>{
@@ -196,6 +240,7 @@ export class StartComponent implements OnInit {
     this.player21Input = true;
     
   }
+
   // player12Click(){
   //   this.gameData.updateScore(this.firstTeamPlayers[1].playerName,this.player12Value,this.player12Score,this.firstTeamPlayers[1]).subscribe(
   //     data=>{
@@ -211,7 +256,8 @@ export class StartComponent implements OnInit {
       data=>{
         this.player21Score = data;
         this.secondTeamPlayers[0].playerScore = data;
-        this.randomTeams[1].teamScore = data;
+        this.randomTeams[1].teamScore = ((data + this.randomTeams[1].teamScore) - this.prev5);
+        this.prev5 = data;
 
         this.gameData.updateTeamScore(this.randomTeams[1].teamName,this.randomTeams[1].teamScore,this.randomTeams[1]).subscribe(
           data=>{
@@ -234,11 +280,56 @@ export class StartComponent implements OnInit {
   //   this.player32Input = true;
   // }
   player31Click(){
+    this.counter = this.counter + 1;
+
     this.gameData.updateScore(this.thirdTeamPlayers[0].playerName,this.player31Value,this.player31Score,this.thirdTeamPlayers[0]).subscribe(
       data=>{
         this.player31Score = data;
         this.thirdTeamPlayers[0].playerScore = data;
-        this.randomTeams[2].teamScore = data;
+        this.randomTeams[2].teamScore = ((data + this.randomTeams[2].teamScore) - this.prev6);
+        this.prev6 = data;
+
+        if(this.counter==3){
+          //disable all input fields
+          this.player11Input = false;
+          this.player12Input = false;
+          this.player21Input = false;
+          this.player22Input = false;
+          this.player31Input = false;
+          this.player32Input = false;
+    
+          
+          //finding highest score at round 1
+          if(this.player11Score > this.player21Score){
+             if(this.player11Score > data){
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.player11message = true;
+              this.firstRoundResult = true
+             }else{
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.player31message = true;
+              this.firstRoundResult = true
+             }
+          }else{
+            if(this.player21Score > data){
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.player21message = true;
+              this.firstRoundResult = true;
+            }
+            else{
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.player31message = true;
+              this.firstRoundResult = true;
+            }
+          }
+        }else{
+        this.player31Input = false;
+        this.player11Input = true;
+       }
 
         this.gameData.updateTeamScore(this.randomTeams[2].teamName,this.randomTeams[2].teamScore,this.randomTeams[2]).subscribe(
           data=>{
@@ -247,57 +338,8 @@ export class StartComponent implements OnInit {
         )
       }
     )
-     this.counter = this.counter + 1;
     // //when the first round ends
-    if(this.counter==3){
-      //disable all input fields
-      this.player11Input = false;
-      this.player12Input = false;
-      this.player21Input = false;
-      this.player22Input = false;
-      this.player31Input = false;
-      this.player32Input = false;
-
-      // this.gameData.updateTeamScore()
-
-      //updating team scores at round 1
-      // this.randomTeams[0].teamScore = this.player11Score;
-      // this.randomTeams[1].teamScore = this.player21Score;
-      // this.randomTeams[2].teamScore = this.player31Score;
-
-      
-      
-      //finding highest score at round 1
-      if(this.randomTeams[0].teamScore > this.randomTeams[1].teamScore){
-         if(this.randomTeams[0].teamScore > this.randomTeams[2].teamScore){
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.player11message = true;
-          this.firstRoundResult = true
-         }else{
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.player31message = true;
-          this.firstRoundResult = true
-         }
-      }else{
-        if(this.randomTeams[1].teamScore > this.randomTeams[2].teamScore){
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.player21message = true;
-          this.firstRoundResult = true;
-        }
-        else{
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.player31message = true;
-          this.firstRoundResult = true;
-        }
-      }
-    }else{
-    this.player31Input = false;
-    this.player11Input = true;
-   }
+    
   }
 
   startSecondRound(){
@@ -311,6 +353,10 @@ export class StartComponent implements OnInit {
     this.showBody2 = true;
     this.player12Input = true;
     this.counter = 0;
+
+    this.interval2 = setInterval(()=>{
+      this.time2.setSeconds(this.time2.getSeconds() + 1);
+    },1000)
 
   }
 
@@ -351,12 +397,55 @@ export class StartComponent implements OnInit {
   }
 
   player32Click(){
+    this.counter = this.counter + 1;
+
     this.gameData.updateScore(this.thirdTeamPlayers[1].playerName,this.player32Value,this.player32Score,this.thirdTeamPlayers[1]).subscribe(
       data=>{
         this.player32Score = data;
         this.thirdTeamPlayers[1].playerScore = data;
         this.randomTeams[2].teamScore = ((data + this.randomTeams[2].teamScore) - this.prev3);
         this.prev3 = data
+
+        if(this.counter == 3){
+          this.player12Input = false;
+          this.player22Input = false;
+          this.player32Input = false;
+     
+          //finding highest score at round 2
+          if(this.player12Score > this.player22Score){
+             if(this.player12Score > data){
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.showBody2 = false;
+              this.player12message = true;
+              this.secondRoundResult = true;
+             }else{
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.showBody2 = false;
+              this.player32message = true;
+              this.secondRoundResult = true;
+             }
+          }else{
+            if(this.player22Score > data){
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.showBody2 = false;
+              this.player22message = true;
+              this.secondRoundResult = true;
+            }
+            else{
+              this.clickedGame1 = false;
+              this.showBody = false;
+              this.showBody2 = false;
+              this.player32message = true;
+              this.secondRoundResult = true;
+            }
+          }
+        }else{
+          this.player32Input = false;
+          this.player12Input = true;
+        }
         this.gameData.updateTeamScore(this.randomTeams[2].teamName,this.randomTeams[2].teamScore,this.randomTeams[2]).subscribe(
           data=>{
             this.sample = data;
@@ -364,47 +453,7 @@ export class StartComponent implements OnInit {
         )
       }
     )
-    this.counter = this.counter + 1;
-    if(this.counter == 3){
-      this.player12Input = false;
-      this.player22Input = false;
-      this.player32Input = false;
- 
-      //finding highest score at round 2
-      if(this.randomTeams[0].teamScore > this.randomTeams[1].teamScore){
-         if(this.randomTeams[0].teamScore > this.randomTeams[2].teamScore){
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.showBody2 = false;
-          this.player12message = true;
-          this.secondRoundResult = true;
-         }else{
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.showBody2 = false;
-          this.player32message = true;
-          this.secondRoundResult = true;
-         }
-      }else{
-        if(this.randomTeams[1].teamScore > this.randomTeams[2].teamScore){
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.showBody2 = false;
-          this.player22message = true;
-          this.secondRoundResult = true;
-        }
-        else{
-          this.clickedGame1 = false;
-          this.showBody = false;
-          this.showBody2 = false;
-          this.player32message = true;
-          this.secondRoundResult = true;
-        }
-      }
-    }else{
-      this.player32Input = false;
-      this.player12Input = true;
-    }
+    
     
   }
 
