@@ -71,6 +71,11 @@ export class StartComponent implements OnInit {
   prev5: number = 0;
   prev6: number = 0;
 
+  draw1: boolean = false;
+  draw2: boolean = false;
+  draw3: boolean = false;
+
+
   newTournament : boolean = false;
 
   //to store number of turns
@@ -289,7 +294,7 @@ export class StartComponent implements OnInit {
         this.randomTeams[2].teamScore = ((data + this.randomTeams[2].teamScore) - this.prev6);
         this.prev6 = data;
 
-        if(this.counter==3){
+        if(this.counter==3 || this.draw2){
           //disable all input fields
           this.player11Input = false;
           this.player12Input = false;
@@ -302,22 +307,49 @@ export class StartComponent implements OnInit {
           //finding highest score at round 1
           if(this.player11Score > this.player21Score){
              if(this.player11Score > data){
-              this.clickedGame1 = false;
-              this.showBody = false;
-              this.player11message = true;
-              this.firstRoundResult = true
-             }else{
+               if(this.player11Score == data || this.player11Score == this.player21Score){
+                 this.player31Input = false;
+                 this.player11Input = true;
+                 this.draw2 = true;
+               }else{
+                this.clickedGame1 = false;
+                this.showBody = false;
+                this.player11message = true;
+                this.firstRoundResult = true;
+                this.draw2 = false;
+               }
+              
+             }else if(data == this.player11Score || data==this.player21Score){
+              this.player31Input = false;
+              this.player11Input = true;
+              this.draw2 = true;
+             }
+             else{
               this.clickedGame1 = false;
               this.showBody = false;
               this.player31message = true;
               this.firstRoundResult = true
+              this.draw2 = false;
              }
           }else{
             if(this.player21Score > data){
-              this.clickedGame1 = false;
+              if(this.player21Score == this.player11Score || this.player21Score == data){
+                this.player31Input = false;
+              this.player11Input = true;
+              this.draw2 = true;
+              }else{
+                this.clickedGame1 = false;
               this.showBody = false;
               this.player21message = true;
               this.firstRoundResult = true;
+              this.draw2 = false;
+              }
+              
+            }
+            else if(data == this.player11Score || data==this.player21Score){
+              this.player31Input = false;
+              this.player11Input = true;
+              this.draw2 = true;
             }
             else{
               this.clickedGame1 = false;
@@ -406,7 +438,7 @@ export class StartComponent implements OnInit {
         this.randomTeams[2].teamScore = ((data + this.randomTeams[2].teamScore) - this.prev3);
         this.prev3 = data
 
-        if(this.counter == 3){
+        if(this.counter == 3 || this.draw1){
           this.player12Input = false;
           this.player22Input = false;
           this.player32Input = false;
@@ -414,25 +446,48 @@ export class StartComponent implements OnInit {
           //finding highest score at round 2
           if(this.player12Score > this.player22Score){
              if(this.player12Score > data){
-              this.clickedGame1 = false;
-              this.showBody = false;
-              this.showBody2 = false;
-              this.player12message = true;
-              this.secondRoundResult = true;
-             }else{
+               if(this.player12Score == data || this.player12Score == this.player22Score){
+                this.player12Input = true; this.player32Input = false;
+                this.draw1 = true;
+               }else{
+                this.clickedGame1 = false;
+                this.showBody = false;
+                this.showBody2 = false;
+                this.player12message = true;
+                this.secondRoundResult = true;
+                this.draw1 = false;
+               }
+              
+             }else if(data == this.player12Score || data == this.player22Score){
+              this.player12Input = true; this.player32Input = false;
+              this.draw1 = true;
+             }
+             else{
               this.clickedGame1 = false;
               this.showBody = false;
               this.showBody2 = false;
               this.player32message = true;
               this.secondRoundResult = true;
+              this.draw1 = false;
              }
           }else{
             if(this.player22Score > data){
-              this.clickedGame1 = false;
+              if(this.player22Score == data || this.player22Score == this.player12Score){
+                this.player12Input = true; this.player32Input = false;
+              this.draw1 = true;
+              }else{
+                this.clickedGame1 = false;
               this.showBody = false;
               this.showBody2 = false;
               this.player22message = true;
               this.secondRoundResult = true;
+              this.draw1 = false;
+              }
+              
+            }
+            else if(data == this.player12Score || data == this.player22Score){
+              this.player12Input = true; this.player32Input = false;
+              this.draw1 = true;
             }
             else{
               this.clickedGame1 = false;
@@ -440,6 +495,7 @@ export class StartComponent implements OnInit {
               this.showBody2 = false;
               this.player32message = true;
               this.secondRoundResult = true;
+              this.draw1 = false;
             }
           }
         }else{
