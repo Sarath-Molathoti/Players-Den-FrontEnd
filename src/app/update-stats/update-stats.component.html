@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="t">
+    <h2 style="margin-top: 15px;">Save Tournaments Details</h2>
+
+  <pre class="s" style="font-family: sans-serif;font-size: 18px;">Tournament Number  </pre>
+  <pre><input type="text" name="tournId" [(ngModel)]="tournId"></pre>
+  <pre class="s" style="font-family: sans-serif;font-size: 18px;">Tournament Date </pre>
+  <pre><input type="text" placeholder="yyyy-mm-dd" name="tournDate" [(ngModel)]="tournDate" ></pre>
+  <pre><button (click)=saveDetails() class="btn btn-success">Save Details</button></pre>
+  <div class="alert alert-warning" *ngIf="numError">Please Enter Tournament Number</div>
+  <div class="alert alert-warning" *ngIf="dateError">Please Enter Tournament Date</div>
+  <div class="alert alert-warning" *ngIf="sucMessage">Tournament Details Saved Successfully </div>
+
+
+</div>

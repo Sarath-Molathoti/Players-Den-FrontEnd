@@ -66,6 +66,9 @@ export class WelcomeComponent implements OnInit {
   goToStats(){
     this.router.navigate(['stats']);
   }
+  updateStats(){
+    this.router.navigate(['update-stats']);
+  }
 
   // startTimer(){
   //   this.interval = setInterval(()=>{

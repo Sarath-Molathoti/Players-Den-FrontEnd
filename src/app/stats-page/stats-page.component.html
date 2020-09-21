@@ -1,27 +1,39 @@
 
-<div *ngIf="total">
-    <ul>
-        <li *ngFor="let group of tournaments">
-        Tournament Number : {{group.tId}} , Tournament Date : {{group.tDate}}
-        <ul>
-            <li *ngFor="let light of group.tDetails">
-            Team Name : {{light.tHistoryTeam}}  , TeamScore : {{light.tHistoryScore}}
+<h1 style="text-align: center;">Historical Stats Page</h1>
+
+
+    <div *ngIf="tByNumberIp">
+        <input type="text" name="tNumber" [(ngModel)]="tNumber" style="margin-left: 270px;">
+    <button (click)="getByNumber()" class="btn btn-success" style="height: 44px;">check By Number</button>
+    </div>
+    <div *ngIf="tByDateIp">
+        <input type="text" placeholder="yyyy-mm-dd" name="tDateToSearch" [(ngModel)]="tDateToSearch" style="margin-left: 270px;">
+    <button (click)="getByDate()" class="btn btn-success" style="height: 44px;">check By Date</button>
+    </div>
     
+    <div style="margin-top: 20px;margin-bottom: 15px;">
+        <button *ngIf="tByNumberBtn" (click)="numberBtn()" style="margin-left: 20px;width: 250px;text-align: center;background-color: orangered;color: white;">Check By Tournament Number</button> <button *ngIf="tByDateBtn" (click)="dateBtn()" style="margin-left: 150px;width: 250px;text-align: center;background-color: orangered;color: white;">Check By Tournament Date</button> <button *ngIf="tAll" (click)="allBtn()" style="margin-left: 150px;width: 250px;text-align: center;background-color: orangered;color: white;">Show All</button> 
+    
+    </div>
+
+    <div *ngIf="total" >
+        <ul >
+            <li *ngFor="let group of tournaments" class="tournAllDiv">
+            Tournament Number : {{group.tId}} , Tournament Date : {{group.tDate | date:'mediumDate'}}
+            <ul>
+                <li *ngFor="let light of group.tDetails">
+                Team Name : {{light.tHistoryTeam}}  , TeamScore : {{light.tHistoryScore}}
+        
+                </li>
+            </ul>
             </li>
         </ul>
-        </li>
-    </ul>
-</div>
-<input type="text" name="tNumber" [(ngModel)]="tNumber" >
-    <button (click)="getByNumber()" class="btn btn-success">check</button>
-    <input type="text" name="tDateToSearch" [(ngModel)]="tDateToSearch" >
-    <button (click)="getByDate()" class="btn btn-success">check By Date</button>
-
+    </div>
 <div *ngIf="showByNumber">
     
     
       <div>
-          {{p.tId}}{{p.tDate}}
+          Tournament Number : {{p.tId}}, Tournament Date : {{p.tDate}}
       </div>
       <div *ngFor="let i of p.tDetails">
         Team Name : {{i.tHistoryTeam}}  , TeamScore : {{i.tHistoryScore}}
@@ -31,7 +43,7 @@
 
 <div *ngIf="showByDate">
     <ul>
-        <li *ngFor="let group of q">
+        <li *ngFor="let group of q" class="tournAllDiv">
         Tournament Number : {{group.tId}} , Tournament Date : {{group.tDate}}
         <ul>
             <li *ngFor="let light of group.tDetails">

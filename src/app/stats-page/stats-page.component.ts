@@ -17,6 +17,13 @@ export class StatsPageComponent implements OnInit {
   total:boolean = true;
   showByNumber:boolean = false;
   showByDate: boolean = false;
+  tByNumberBtn: boolean = true;
+  tByDateBtn: boolean = true;
+  tByNumberIp: boolean = false;
+  tByDateIp: boolean = false;
+
+  tAll: boolean = true;
+
   
 
   constructor(
@@ -33,6 +40,7 @@ export class StatsPageComponent implements OnInit {
   }
 
   getByNumber(){
+    this.total = false;
     this.gameData.getTournamentByNumber(this.tNumber).subscribe(
       data=>{
         this.p = data;
@@ -43,6 +51,7 @@ export class StatsPageComponent implements OnInit {
   }
 
   getByDate(){
+    this.total = false;
     this.gameData.getTournamentByDate(this.tDateToSearch).subscribe(
       data=>{
         this.q = data;
@@ -50,6 +59,32 @@ export class StatsPageComponent implements OnInit {
         this.showByDate = true;
       }
     )
+  }
+
+  numberBtn(){
+    this.total = false;
+    this.tByNumberIp = true;
+    this.tByDateIp = false;
+    this.showByDate = false;
+
+
+  }
+  dateBtn(){
+    this.total = false;
+    this.tByDateIp = true;
+    this.tByNumberIp = false;
+    this.showByNumber = false;
+
+
+  }
+  allBtn(){
+    this.total = true;
+    this.tByDateIp = false;
+    this.tByNumberIp = false;
+    this.showByNumber = false;
+    this.showByDate = false;
+
+
   }
   
 

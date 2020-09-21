@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class StartComponent implements OnInit {
 
 
-  date = new Date('2019-01-26T00:00:00');
+  tournamentId: number;
 
   gamesCounter : number;
 
@@ -75,6 +75,8 @@ export class StartComponent implements OnInit {
   draw2: boolean = false;
   draw3: boolean = false;
 
+  inputError : boolean = false;
+
 
   newTournament : boolean = false;
 
@@ -84,7 +86,9 @@ export class StartComponent implements OnInit {
   sample : number;
   temp : number;
 
-  now: string;
+  timeNow: string;
+  now : Date = new Date();
+
 
   interval1;
   time1 =  new Date(null);
@@ -144,7 +148,7 @@ export class StartComponent implements OnInit {
        this.newTournament = true;
      }
     setInterval(() => {
-      this.now = new Date().toString().split(' ')[4];
+      this.timeNow = new Date().toString().split(' ')[4];
       
 
     }, 1);
@@ -156,6 +160,12 @@ export class StartComponent implements OnInit {
     this.gameData.clearScores("clear").subscribe(
       data=>{
          
+      }
+    )
+    //Get Tournament Id
+    this.gameData.getTournamentId().subscribe(
+      data=>{
+        this.tournamentId = data;
       }
     )
    }
@@ -175,6 +185,11 @@ export class StartComponent implements OnInit {
   }
 
   selectThings(){
+    // this.gameData.clearTeamScores(this.temp).subscribe(
+    //   data=>{
+    //     this.temp = data;
+    //   }
+    // )
     this.gamesCounter = this.gamesCounter + 1;
     this.global.gameCounter = this.gamesCounter;
     this.clickedGame1 = false;
@@ -227,6 +242,8 @@ export class StartComponent implements OnInit {
   }
 
   player11Click(){
+    if(this.player11Value>=2 && this.player11Value<=10){
+      this.inputError = false;
     this.gameData.updateScore(this.firstTeamPlayers[0].playerName,this.player11Value,this.player11Score,this.firstTeamPlayers[0]).subscribe(
       data=>{
         this.player11Score = data;
@@ -243,6 +260,9 @@ export class StartComponent implements OnInit {
     )
     this.player11Input = false;
     this.player21Input = true;
+    }else{
+      this.inputError = true;
+    }
     
   }
 
@@ -257,6 +277,9 @@ export class StartComponent implements OnInit {
   //   this.player22Input = true;
   // }
   player21Click(){
+    if(this.player21Value>=2 && this.player21Value<=10){
+      this.inputError = false;
+
     this.gameData.updateScore(this.secondTeamPlayers[0].playerName,this.player21Value,this.player21Score,this.secondTeamPlayers[0]).subscribe(
       data=>{
         this.player21Score = data;
@@ -273,6 +296,9 @@ export class StartComponent implements OnInit {
     )
     this.player21Input = false;
     this.player31Input = true;
+    }else{
+      this.inputError = true;
+    }
   }
   // player22Click(){
   //   this.gameData.updateScore(this.secondTeamPlayers[1].playerName,this.player22Value,this.player22Score,this.secondTeamPlayers[1]).subscribe(
@@ -285,6 +311,8 @@ export class StartComponent implements OnInit {
   //   this.player32Input = true;
   // }
   player31Click(){
+    if(this.player31Value>=2 && this.player31Value<=10){
+      this.inputError = false;
     this.counter = this.counter + 1;
 
     this.gameData.updateScore(this.thirdTeamPlayers[0].playerName,this.player31Value,this.player31Score,this.thirdTeamPlayers[0]).subscribe(
@@ -370,6 +398,9 @@ export class StartComponent implements OnInit {
         )
       }
     )
+    }else{
+      this.inputError = true;
+    }
     // //when the first round ends
     
   }
@@ -393,6 +424,8 @@ export class StartComponent implements OnInit {
   }
 
   player12Click(){
+    if(this.player12Value>=2 && this.player12Value<=10){
+      this.inputError = false;
     this.gameData.updateScore(this.firstTeamPlayers[1].playerName,this.player12Value,this.player12Score,this.firstTeamPlayers[1]).subscribe(
       data=>{
         this.player12Score = data;
@@ -408,9 +441,14 @@ export class StartComponent implements OnInit {
     )
     this.player12Input = false;
     this.player22Input = true;
+    }else{
+      this.inputError = true;
+    }
   }
 
   player22Click(){
+    if(this.player22Value>=2 && this.player22Value<=10){
+    this.inputError = false;
     this.gameData.updateScore(this.secondTeamPlayers[1].playerName,this.player22Value,this.player22Score,this.secondTeamPlayers[1]).subscribe(
       data=>{
         this.player22Score = data;
@@ -426,9 +464,14 @@ export class StartComponent implements OnInit {
     )
     this.player22Input = false;
     this.player32Input = true;
+    }else{
+      this.inputError = true;
+    }
   }
 
   player32Click(){
+    if(this.player32Value>=2 && this.player32Value<=10){
+    this.inputError = false;
     this.counter = this.counter + 1;
 
     this.gameData.updateScore(this.thirdTeamPlayers[1].playerName,this.player32Value,this.player32Score,this.thirdTeamPlayers[1]).subscribe(
@@ -509,6 +552,9 @@ export class StartComponent implements OnInit {
         )
       }
     )
+    }else{
+      this.inputError = true;
+    }
     
     
   }

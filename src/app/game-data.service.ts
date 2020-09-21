@@ -53,5 +53,25 @@ export class GameDataService {
     return this.http.get<Tournament[]>(`http://localhost:8080/${tournament_date}/tdetails/`);
 
   }
+  getTournamentId(){
+    return this.http.get<number>(`http://localhost:8080/tournament_id`);
+
+  }
+
+  saveTournamentDetails1(tournament_num,tournament_dat,l){
+    return this.http.post<number>(`http://localhost:8080/${tournament_num}/${tournament_dat}/`,l);
+
+  }
+  saveTournamentDetails2(l){
+    return this.http.put<number>(`http://localhost:8080/update_tournament/`,l);
+
+  }
+
+  getTeamNameCount(team_name){
+    return this.http.get<number>(`http://localhost:8080/${team_name}/count`);
+
+  }
+
+  
   
 }

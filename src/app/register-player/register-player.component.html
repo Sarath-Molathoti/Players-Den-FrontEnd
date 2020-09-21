@@ -23,10 +23,7 @@
 <thead >
 
     <th colspan="2">
-        <div class="alert alert-warning" *ngIf="ageError">Players who are less than 18 years are not allowed to participate in this game</div>
-    <div class="alert alert-warning" *ngIf="agePError">Please Enter Player Age</div>
-    <div class="alert alert-warning" *ngIf="nameError">Please Enter Player Name</div>
-    <div class="alert alert-warning" *ngIf="pNameError">Please Enter Player Team Name</div>Player Registration</th>
+        Player Registration</th>
   </thead>
   <tbody>
     
@@ -49,6 +46,12 @@
     <tr>
       <td colspan="2"><button (click)=savePlayer() class="btn btn-success">Register</button> </td>
     </tr>
+    <tr ><td colspan="2">
+      <div class="alert alert-warning" *ngIf="ageError">Players who are less than 18 years are not allowed to participate in this game</div>
+    <div class="alert alert-warning" *ngIf="agePError">Please Enter Player Age</div>
+    <div class="alert alert-warning" *ngIf="nameError">Please Enter Player Name</div>
+    <div class="alert alert-warning" *ngIf="pNameError">Please Enter Player Team Name</div>
+  </td> </tr>
   </tbody>
 </table>
 

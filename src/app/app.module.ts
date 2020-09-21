@@ -18,6 +18,7 @@ import {CountdownModule} from 'ngx-countdown';
 import {NgxTimerModule} from 'ngx-timer';
 
 import { CountUpModule } from 'ngx-countup';
+import { UpdateStatsComponent } from './update-stats/update-stats.component';
 
 
 
@@ -32,7 +33,8 @@ import { CountUpModule } from 'ngx-countup';
     LeaderboardComponent,
     StartComponent,
     GameComponent,
-    StatsPageComponent
+    StatsPageComponent,
+    UpdateStatsComponent
   ],
   imports: [
     BrowserModule,

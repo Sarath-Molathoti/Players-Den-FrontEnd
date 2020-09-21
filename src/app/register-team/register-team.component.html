@@ -14,13 +14,19 @@
 <html>
 <body>
   <div class="t">
-    <h2>Team Registration</h2>
+    <h2 style="margin-top: 15px;">Team Registration</h2>
 
-  <pre class="s">Team Name  </pre>
+  <pre class="s" style="font-family: sans-serif;font-size: 18px;">Team Name  </pre>
   <pre><input type="text" name="team.teamName" [(ngModel)]="team.teamName"></pre>
-  <pre class="s">Team Caption </pre>
+  <pre class="s" style="font-family: sans-serif;font-size: 18px;">Team Caption </pre>
   <pre><input type="text" name="team.teamCaption" [(ngModel)]="team.teamCaption" ></pre>
   <pre><button (click)=saveTeam() class="btn btn-success">Register</button></pre>
+  <div class="alert alert-warning" *ngIf="nameError">Please Enter Team Name</div>
+  <div class="alert alert-warning" *ngIf="dupMessage">Team Name Already Exists</div>
+  <div class="alert alert-success" *ngIf="succMessage">Team Registered Successfully</div>
+
+
+
 </div>
   <!-- <table class="t">
     <thead>

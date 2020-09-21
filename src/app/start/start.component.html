@@ -2,6 +2,7 @@
 <!-- <countdown [startTime]=10 [endTime]=0></countdown> -->
 
 
+<div class="alert alert-warning" *ngIf="inputError">Please Enter a between 2 and 10</div>
 
   <div class="container" *ngIf="newTournament">
     Tournament is over.  Start a new Tournament    <button (click)="startNewTournament()"  class="btn btn-success">Start a New Tournament</button> 
@@ -9,38 +10,38 @@
   </div>
   <!-- Display Congratulations messages -->
    <div class="congo" *ngIf="player11message" >
-     Congratulations <b>{{firstTeamPlayers[0].playerName}}</b>. You won the game.
+     Congratulations <b>{{firstTeamPlayers[0].playerName}}</b>. You won First Round.
      <pre>Caption: {{firstTeamPlayers[0].playerCaption}}</pre>
      <pre>Score : {{firstTeamPlayers[0].playerScore}}</pre>
      <pre>Team : {{firstTeamPlayers[0].playerTeamName}}</pre>
    </div>
    <div class="congo" *ngIf="player21message" >
-    Congratulations  <b>{{secondTeamPlayers[0].playerName}}</b>. You won the game.
+    Congratulations  <b>{{secondTeamPlayers[0].playerName}}</b>. You won First Round.
     <pre>Caption: {{secondTeamPlayers[0].playerCaption}}</pre>
     <pre>Score : {{secondTeamPlayers[0].playerScore}}</pre>
     <pre>Team : {{secondTeamPlayers[0].playerTeamName}}</pre>
   </div>
   <div class="congo" *ngIf="player31message" >
-    Congratulations <b>{{thirdTeamPlayers[0].playerName}}</b>. You won the game.
+    Congratulations <b>{{thirdTeamPlayers[0].playerName}}</b>. You won First Round.
     <pre>Caption: {{thirdTeamPlayers[0].playerCaption}}</pre>
     <pre>Score : {{thirdTeamPlayers[0].playerScore}}</pre>
     <pre>Team : {{thirdTeamPlayers[0].playerTeamName}}</pre>
   </div>
 
   <div class="congo" *ngIf="player12message" >
-    Congratulations <b>{{firstTeamPlayers[1].playerName}}</b>. You won the game.
+    Congratulations <b>{{firstTeamPlayers[1].playerName}}</b>. You won Second Round.
     <pre>Caption: {{firstTeamPlayers[1].playerCaption}}</pre>
     <pre>Score : {{firstTeamPlayers[1].playerScore}}</pre>
     <pre>Team : {{firstTeamPlayers[1].playerTeamName}}</pre>
   </div>
   <div class="congo" *ngIf="player22message" >
-   Congratulations  <b>{{secondTeamPlayers[1].playerName}}</b>. You won the game.
+   Congratulations  <b>{{secondTeamPlayers[1].playerName}}</b>. You won Second Round.
    <pre>Caption: {{secondTeamPlayers[1].playerCaption}}</pre>
    <pre>Score : {{secondTeamPlayers[1].playerScore}}</pre>
    <pre>Team : {{secondTeamPlayers[1].playerTeamName}}</pre>
  </div>
  <div class="congo" *ngIf="player32message" >
-   Congratulations <b>{{thirdTeamPlayers[1].playerName}}</b>. You won the game.
+   Congratulations <b>{{thirdTeamPlayers[1].playerName}}</b>. You won Second Round.
    <pre>Caption: {{thirdTeamPlayers[1].playerCaption}}</pre>
    <pre>Score : {{thirdTeamPlayers[1].playerScore}}</pre>
    <pre>Team : {{thirdTeamPlayers[1].playerTeamName}}</pre>
@@ -68,9 +69,38 @@
             <td>{{secondTeamPlayers[0].playerScore}}</td>
           </tr>
           <tr>
-            <td>{{randomTeams[2].teamName}}({{thirdTeamPlayers[0].playerName}})</td>
+            <td>{{thirdTeamPlayers[0].playerName}}</td>
             <td>{{thirdTeamPlayers[0].playerCaption}}</td>
             <td>{{thirdTeamPlayers[0].playerScore}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+          <th>Team Name</th>
+          <th>Team Caption</th>
+          <th>Team Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{randomTeams[0].teamName}}</td>
+            <td>{{randomTeams[0].teamCaption}}</td>
+            <td>{{randomTeams[0].teamScore}}</td>
+          </tr>
+          <tr>
+            <td>{{randomTeams[1].teamName}}</td>
+            <td>{{randomTeams[1].teamCaption}}</td>
+            <td>{{randomTeams[1].teamScore}}</td>
+          </tr>
+          <tr>
+            <td>{{randomTeams[2].teamName}}</td>
+            <td>{{randomTeams[2].teamCaption}}</td>
+            <td>{{randomTeams[2].teamScore}}</td>
           </tr>
       
         </tbody>
@@ -111,27 +141,55 @@
       </tbody>
     </table>
 
+    <table class="table">
+      <thead>
+        <tr>
+        <th>Team Name</th>
+        <th>Team Caption</th>
+        <th>Team Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{randomTeams[0].teamName}}</td>
+          <td>{{randomTeams[0].teamCaption}}</td>
+          <td>{{randomTeams[0].teamScore}}</td>
+        </tr>
+        <tr>
+          <td>{{randomTeams[1].teamName}}</td>
+          <td>{{randomTeams[1].teamCaption}}</td>
+          <td>{{randomTeams[1].teamScore}}</td>
+        </tr>
+        <tr>
+          <td>{{randomTeams[2].teamName}}</td>
+          <td>{{randomTeams[2].teamCaption}}</td>
+          <td>{{randomTeams[2].teamScore}}</td>
+        </tr>
+    
+      </tbody>
+    </table>
+
     <button class="btn btn-success" (click)="startNewGame()">Move to Next Game</button> 
 
 </div>
 
 
  <!-- DISPLAYING GAME BUTTONS -->
-   <button *ngIf="clickedGame1" (click)="selectThings()"  class="btn btn-success">Start Game1</button> 
-   <button *ngIf="clickedGame2" (click)="selectThings()"  class="btn btn-success">Start Game2</button> 
-   <button *ngIf="clickedGame3" (click)="selectThings()"  class="btn btn-success">Start Game3</button> 
-   <button *ngIf="clickedGame4" (click)="selectThings()"  class="btn btn-success">Start Game4</button> 
-   <button *ngIf="clickedGame5" (click)="selectThings()"  class="btn btn-success">Start Game5</button> 
+   <button *ngIf="clickedGame1" (click)="selectThings()"  class="startButtons" style="margin-top:120px;">Start Game1</button> 
+   <button *ngIf="clickedGame2" (click)="selectThings()"  class="startButtons">Start Game2</button> 
+   <button *ngIf="clickedGame3" (click)="selectThings()"  class="startButtons">Start Game3</button> 
+   <button *ngIf="clickedGame4" (click)="selectThings()"  class="startButtons">Start Game4</button> 
+   <button *ngIf="clickedGame5" (click)="selectThings()"  class="startButtons">Start Game5</button> 
 
 <!-- DISPLAYING TIME -->
    <div *ngIf="showBody">
-     Time : {{now}}  <pre> Time since game is on : {{time1.toISOString().substr(11,8)}}</pre>
-     <!-- <div class="container" *ngFor="let g of randomTeams[0].players">
-      {{g.playerName}}
-     </div> -->
+     <div class="text-primary" style="font-size: 25px;float: left;margin-right: 650px;">Date : {{now | date:'mediumDate'}}</div> 
+     <div class="text-primary" style="font-size: 25px;">Time : {{timeNow}}</div>
+     <div class="text-success" style="font-size: 28px;text-align: center;margin-top: 20px;"> Tournament Id : {{tournamentId}}</div>  
+     <div class="text-info" style="font-size: 28px;margin-top: 20px;"> <marquee behavior="alternate">Time since game is on : {{time1.toISOString().substr(11,8)}}</marquee></div>
    </div>
    <!-- DISPLAYING FIRST ROUND BODY -->
-  <div class="row" style="margin-top: 140px;" *ngIf="showBody">
+  <div class="row" style="margin-top: 170px;" *ngIf="showBody">
     <div class="column" style="background-color:#aaa;">
       <table class="table">
         <thead>
@@ -231,11 +289,17 @@
 
   <!-- SECOND ROUND -->
   <div *ngIf="showBody2">
-    Time : {{now}}   <pre> Time since game is on : {{time1.toISOString().substr(11,8)}}</pre>
-    <pre> Time since round is on : {{time2.toISOString().substr(11,8)}}</pre>
+    <div class="text-primary" style="font-size: 25px;float: left;margin-right: 650px;">Date : {{now | date:'mediumDate'}}</div> 
+     <div class="text-primary" style="font-size: 25px;">Time : {{timeNow}}</div>
+     <div class="text-success" style="font-size: 28px;text-align: center;margin-top: 20px;"> Tournament Id : {{tournamentId}}</div>  
+     <div class="text-info" style="font-size: 28px;margin-top: 20px;"> <marquee direction="right">Time since game is on : {{time1.toISOString().substr(11,8)}}</marquee></div>
+     <div class="text-info" style="font-size: 28px;margin-top: 20px;"> <marquee direction="left">Time since game is on : {{time2.toISOString().substr(11,8)}}</marquee></div>
+
+    <!-- Time : {{now}}   <pre> Time since game is on : {{time1.toISOString().substr(11,8)}}</pre> -->
+    <!-- <pre> Time since round is on : {{time2.toISOString().substr(11,8)}}</pre> -->
   </div>
 
-  <div class="row" style="margin-top: 140px;" *ngIf="showBody2">
+  <div class="row" style="margin-top: 170px;" *ngIf="showBody2">
     <div class="column" style="background-color:#aaa;">
       <table class="table">
         <thead>
